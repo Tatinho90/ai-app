@@ -1,13 +1,11 @@
-import Chat from "./Components/ChatWindow"
+import ChatWindow from "./Components/Chat window"
 
 function App() {
   return (
-    <>
-    <Chat/>
-    <h1>Mamma Mia</h1>
-    </>
-    
-     );
+   <>
+   <ChatWindow/>
+   </>
+  );
 }
 
 export default App;
