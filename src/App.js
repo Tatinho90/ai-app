@@ -1,9 +1,10 @@
-import ChatWindow from "./Components/Chat window"
+// import ChatWindow from "./Components/Chat window"
+import WhoIsOnline from "./pages/WhoIsOnline"
 
 function App() {
   return (
    <>
-   <ChatWindow/>
+   <WhoIsOnline />
    </>
   );
 }

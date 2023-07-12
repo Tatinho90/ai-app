@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Pic from "./Profile-pics"
 
 const StyledDiv = styled.div`
 width: 100%;
@@ -18,8 +17,7 @@ background-color: #353535;
 
 export default function Chatwindow(){
     return (
-        <StyledDiv>
-            <Pic />
-        </StyledDiv>
+        <StyledDiv >
+        </StyledDiv >      
     )
 }

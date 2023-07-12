@@ -15,3 +15,5 @@ const celebrities = [
     profilePicURL: require("./images/Einstein.jpg"),
    },
 ]
+
+export default celebrities
