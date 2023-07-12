@@ -2,16 +2,16 @@ const celebrities = [
    {
     firstName: "William",
     lastName: "Shakespeare",
-    profilePicURL: "",
+    profilePicURL: require("./images/Shakespeare.jpg"),
    },
    {
     firstName: "George",
     lastName: "Washington",
-    profilePicURL: "",
+    profilePicURL: require("./images/Washington.jpg"),
    },
    {
     firstName: "Albert",
     lastName: "Einstein",
-    profilePicURL: "",
+    profilePicURL: require("./images/Einstein.jpg"),
    },
 ]

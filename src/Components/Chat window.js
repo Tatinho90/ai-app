@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import image from "../images/wallpaper.png"
 import Pic from "./Profile-pics"
 
 const StyledDiv = styled.div`
@@ -13,7 +12,7 @@ position: absolute;
 top: 0; right: 0;
 bottom: 0; left: 0;
 border-radius: 20px;
-background: url(${image}) no-repeat;
+background: url(${require("../images/wallpaper.png")}) no-repeat;
 background-color: #353535;
 `
 
