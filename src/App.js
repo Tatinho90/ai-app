@@ -1,9 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import ChatWindow from "./Components/Chat window"
 
 function App() {
   return (
-   <></>
+   <>
+   <ChatWindow/>
+   </>
   );
 }
 
