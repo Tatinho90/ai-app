@@ -5,7 +5,7 @@ import celebrities from "../celebrities"
 export default function WhoIsOnline(){
 
     const onlinePhotos = celebrities.map(elem => { 
-        return <ProfilePics/>
+        return <ProfilePics name={elem.firstName}/>
     } )
     return (
             <>

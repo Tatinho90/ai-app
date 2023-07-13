@@ -14,11 +14,12 @@ border-radius: 50%;
 background-color: white;
 `
 
-export default function Pics(){
+export default function Pics(props){
     return(
         <>
         <></>
         <StyledDiv>
+        <StyledH1>{props.name}</StyledH1>
     </StyledDiv>
         </>
     
