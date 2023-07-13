@@ -10,6 +10,7 @@ export default function WhoIsOnline(){
     return (
             <>
             <ChatWindow>
+                <h1>Online contacts</h1>
            {onlinePhotos}
         </ChatWindow >
             </ >        
