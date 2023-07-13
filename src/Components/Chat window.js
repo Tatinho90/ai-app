@@ -15,9 +15,13 @@ background: url(${require("../images/wallpaper.png")}) no-repeat;
 background-color: #353535;
 `
 
-export default function Chatwindow(){
+export default function Chatwindow({children}){
     return (
-        <StyledDiv >
-        </StyledDiv >      
+        <>
+        <StyledDiv >  
+            {children}
+        </ StyledDiv >  
+        </>
+         
     )
 }

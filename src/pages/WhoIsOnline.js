@@ -3,13 +3,14 @@ import ProfilePics from "../Components/Profile-pics"
 import celebrities from "../celebrities"
 
 export default function WhoIsOnline(){
+
+    const onlinePhotos = celebrities.map(elem => { 
+        return <ProfilePics/>
+    } )
     return (
-        
-      
             <>
-             
-            <ProfilePics>{"Hmmm"}</ProfilePics>
             <ChatWindow>
+           {onlinePhotos}
         </ChatWindow >
             </ >        
        

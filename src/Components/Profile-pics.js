@@ -1,5 +1,10 @@
 import styled from "styled-components"
 
+const StyledH1 = styled.h1`
+margin-left: 5%;
+margin-top: 5%;
+`
+
 const StyledDiv = styled.div`
 margin-left: 5%;
 margin-top: 5%;
@@ -12,6 +17,7 @@ background-color: white;
 export default function Pics(){
     return(
         <>
+        <></>
         <StyledDiv>
     </StyledDiv>
         </>

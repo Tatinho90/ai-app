@@ -1,10 +1,15 @@
-// import ChatWindow from "./Components/Chat window"
+import ChatWindow from "./Components/Chat window"
 import WhoIsOnline from "./pages/WhoIsOnline"
-
-function App() {
+import ProfilePic from "./Components/Profile-pics"
+function App({children}) {
   return (
    <>
-   <WhoIsOnline />
+
+      <WhoIsOnline />
+      
+     
+
+  
    </>
   );
 }
