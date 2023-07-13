@@ -12,6 +12,16 @@ height: 70px;
 width: 70px;
 border-radius: 50%;
 background-color: white;
+overflow: hidden;
+border: 2.5px solid #FFCB45;
+`
+
+const StyledImage = styled.img`
+object-fit: cover;
+width: 150%;
+position: relative;
+left: -15px;
+
 `
 
 export default function Pics(props){
@@ -19,7 +29,7 @@ export default function Pics(props){
         <>
         <></>
         <StyledDiv>
-        <StyledH1>{props.name}</StyledH1>
+        <StyledImage src={props.url}/>
     </StyledDiv>
         </>
     
