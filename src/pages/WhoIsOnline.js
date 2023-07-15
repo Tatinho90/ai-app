@@ -54,3 +54,5 @@ export default function WhoIsOnline(){
     )
    
 } 
+
+export {StyledInnerDiv}

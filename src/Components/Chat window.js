@@ -5,7 +5,6 @@ width: 100%;
 height: 100vh;
 max-width: 325px;
 max-height: 700px;
-background-color: white;
 margin: auto;
 position: absolute;
 top: 0; right: 0;

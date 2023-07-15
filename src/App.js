@@ -1,15 +1,15 @@
-import ChatWindow from "./Components/Chat window"
 import WhoIsOnline from "./pages/WhoIsOnline"
-import ProfilePic from "./Components/Profile-pics"
+import ChatPage from "./pages/ChatPage"
+import {Link, Route, Routes} from "react-router-dom"
+
 function App({children}) {
   return (
    <>
-
-      <WhoIsOnline />
+   <Routes>
+      <Route path="/" element={<WhoIsOnline /> }></ Route>
+      <Route path="/chatWindow" element={<ChatPage /> }></ Route>
+   </Routes>
       
-     
-
-  
    </>
   );
 }
