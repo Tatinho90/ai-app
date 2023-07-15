@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+const textColor= "#000"
+
 const StyledH1 = styled.h1`
 margin-left: 5%;
 margin-top: 5%;
@@ -24,7 +26,7 @@ left: -15px;
 
 `
 const StyledContactName = styled.h3`
-color: #FFF;
+color: ${textColor};
 font-size: 16px;
 font-style: normal;
 font-weight: 700;
@@ -34,7 +36,7 @@ margin:0;
 `
 
 const StyledOnlineStatus = styled.h3`
-color: #FFF;
+color: ${textColor};
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -46,7 +48,6 @@ margin:0;
 const StyledContainer = styled.div`
 display: flex;
 flex-direction: row
-border: 1px solid green;
 `
 
 const StyledInnerContainer = styled.div`
@@ -54,7 +55,7 @@ display: flex;
 flex-direction: column;
 margin-left: 10px;
 justify-content: center;
-gap: 13px;
+gap: 4px;
 `
 
 export default function Pics(props){
