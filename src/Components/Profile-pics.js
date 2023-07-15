@@ -8,10 +8,11 @@ margin-top: 5%;
 `
 
 const StyledDiv = styled.div`
-margin-left: 5%;
-margin-top: 5%;
-height: 70px;
-width: 70px;
+margin-left: 0%;
+margin-top: 4%;
+margin-bottom: 4%;
+height: 60px;
+width: 60px;
 border-radius: 50%;
 background-color: white;
 overflow: hidden;
@@ -47,7 +48,14 @@ margin:0;
 
 const StyledContainer = styled.div`
 display: flex;
-flex-direction: row
+flex-direction: row;
+align-items: center;
+border-bottom: 1px solid #E5E6E9;
+padding : 0 5% 0 5%;
+&: hover {
+    background-color: rgba(255, 199, 0, 0.25);
+    cursor: pointer;
+}
 `
 
 const StyledInnerContainer = styled.div`
@@ -58,18 +66,41 @@ justify-content: center;
 gap: 4px;
 `
 
+const OnlinePoint = styled.div`
+height: 13px;
+width: 13px;
+border-radius: 50%;
+background-color: #22C55E;
+position: relative;
+top: 27px;
+right: 18px;
+z-index: 99;
+border: 2px solid white;;
+`
+const StyledArrow = styled.i`
+position: absolute;
+right: 18px;
+margin-top: auto;
+margin-bottom: auto;
+color: rgba(0,0,0,0.4);
+`
+
 export default function Pics(props){
     return(
         <>
         <StyledContainer>
+            
             <StyledDiv>
-                <StyledImage src={props.url}/>
+                <StyledImage src={props.url}>  
+                </ StyledImage >
             </StyledDiv>
+            <OnlinePoint/>    
             <StyledInnerContainer>
                 <StyledContactName>{`${props.firstName} ${props.lastName}`}</StyledContactName>
                 <StyledOnlineStatus>Online</StyledOnlineStatus>
+                
             </StyledInnerContainer>
-   
+            <StyledArrow className="fa-solid fa-chevron-right" />
         </StyledContainer>
        
 

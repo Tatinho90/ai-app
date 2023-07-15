@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  height: 100vh;
-background-color: #FFBB36;
-}
-*{
-  font-family: 'Inter', sans-serif;
+  background-color: #FFBB36;
+  background: #0C54BF;
+  font-family: Inter;
 }

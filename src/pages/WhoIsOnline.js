@@ -28,6 +28,7 @@ border-radius: 90px;
 background: #E5E6E9;
 margin: auto;
 margin-top: 19px;
+margin-bottom: 8px;
 `
 
 export default function WhoIsOnline(){

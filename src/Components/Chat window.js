@@ -10,9 +10,10 @@ margin: auto;
 position: absolute;
 top: 0; right: 0;
 bottom: 0; left: 0;
-border-radius: 20px;
+border-radius: 40px;
 background: url(${require("../images/wallpaper.png")}) no-repeat;
 background-color: #353535;
+overflow: hidden;
 `
 
 export default function Chatwindow({children}){
