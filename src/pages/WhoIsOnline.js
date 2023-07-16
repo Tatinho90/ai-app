@@ -31,13 +31,14 @@ margin-top: 19px;
 margin-bottom: 8px;
 `
 
-export default function WhoIsOnline(){
+export default function WhoIsOnline({changeUser}){
 
     const onlinePhotos = celebrities.map(elem => { 
         return <ProfilePics url={elem.profilePicURL} 
         firstName={elem.firstName}
-         lastName = {elem.lastName}
-         key = {elem.id}
+        lastName = {elem.lastName}
+        key = {elem.id}
+        changeUser = {changeUser}
          />
     } )
     return (

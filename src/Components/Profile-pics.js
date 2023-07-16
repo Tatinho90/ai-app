@@ -89,7 +89,9 @@ export default function Pics(props){
         <Link
          to="/chatWindow"
          style={{textDecoration: "none"}}>
-            <StyledContainer>
+            <StyledContainer
+            onClick = {() => props.changeUser({url: props.url, firstName: props.firstName})}
+            >
                 
                 <StyledDiv>
                     <StyledImage src={props.url}>  

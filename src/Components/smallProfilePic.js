@@ -5,8 +5,8 @@ const textColor= "white"
 
 
 const StyledDiv = styled.div`
-height: 42px;
-width: 42px;
+height: 52px;
+width: 52px;
 border-radius: 50%;
 background-color: white;
 overflow: hidden;
@@ -17,8 +17,7 @@ const StyledImage = styled.img`
 object-fit: cover;
 width: 150%;
 position: relative;
-left: -15px;
-
+left: -12px;
 `
 const StyledContactName = styled.h3`
 color: ${textColor};
@@ -45,7 +44,9 @@ display: flex;
 flex-direction: row;
 align-items: center;
 padding : 0 5% 0 5%;
-margin-top: 30px;
+margin-top: 28px;
+margin-left: 10px;;
+margin-right: -10px;
 `
 
 const StyledInnerContainer = styled.div`
@@ -62,9 +63,8 @@ width: 8px;
 border-radius: 50%;
 background-color: #22C55E;
 position: relative;
-top: 18px;
+top: 20px;
 right: 15px;
-z-index: 99;
 border: 2px solid white;;
 `
 
