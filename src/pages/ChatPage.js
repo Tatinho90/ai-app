@@ -31,6 +31,8 @@ padding-left: 25px;
 font-family: Inter;
 `
 const SendIcon = styled.i`
+color: #353535;
+padding: 5px;
 
 `
 
@@ -45,6 +47,13 @@ background-color: #E5E6E9;
 position: absolute;
 bottom: 28px;
 right: 18px;
+display:flex;
+align-items: center;
+justify-content: center;
+&:hover {
+    background-color: #FFCB45;
+    cursor: pointer;
+}
 `
 
 export default function ChatWindow({url, firstName}){
@@ -63,17 +72,16 @@ export default function ChatWindow({url, firstName}){
                 </Link>
             </StyledContainer>
 
-{/* Chat Window Starts here  */}
 
             <StyledInnerDiv >
                 
                   
             </StyledInnerDiv>
                 <form>
-                    <ChatEntry placeholder="Type Message here"/>
-                    <SendContainer/>
-                    {/* <SendIcon className="fa-regular fa-paper-plane"/> */}
-                    
+                    <ChatEntry placeholder="Type message here"/>
+                    <SendContainer>
+                        <SendIcon className="fa-regular fa-paper-plane"/>
+                     </SendContainer>              
                 </form>
         </ Background >
         </>
