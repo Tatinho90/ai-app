@@ -61,9 +61,10 @@ background-color: #FFCB45;
 export default function ChatWindow({url, firstName}){
 
 const prompt = `I am ${firstName}` 
+
  
 //State variables
-const [messages, setMessages] = useState("")
+const [messages, setMessages] = useState(['Start'])
 const [typedMessage, setTypedMessage] = useState("")
 
 //State variable updates
@@ -75,6 +76,9 @@ const updateConversation = () => {
     setMessages(`${typedMessage}`)
 }
 
+const displayedchatMessage = messages.map(elem => {
+    return <Speechbubble message={"Mamma mia"}/>
+})
 
 
     return(
@@ -92,7 +96,7 @@ const updateConversation = () => {
 
 
             <StyledInnerDiv >
-                
+            {displayedchatMessage}
                   
             </StyledInnerDiv>
                 <form 
