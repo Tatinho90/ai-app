@@ -50,14 +50,19 @@ right: 18px;
 display:flex;
 align-items: center;
 justify-content: center;
+background-color: #FFCB45;
 &:hover {
-    background-color: #FFCB45;
     cursor: pointer;
+    background-color: rgba(255, 203, 69, 0.5)
 }
 `
 
 export default function ChatWindow({url, firstName}){
+const [typedMessage, setTypedMessage] = useState("")
 
+const updateChat = (e) => {
+    setTypedMessage(e.target.value)
+}
 
     return(
         <>
@@ -78,7 +83,12 @@ export default function ChatWindow({url, firstName}){
                   
             </StyledInnerDiv>
                 <form>
-                    <ChatEntry placeholder="Type message here"/>
+                    <ChatEntry 
+                        placeholder="Type message here"
+                        value = {typedMessage}
+                        onChange= {updateChat}
+
+                        />
                     <SendContainer>
                         <SendIcon className="fa-regular fa-paper-plane"/>
                      </SendContainer>              
