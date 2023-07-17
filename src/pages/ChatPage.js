@@ -1,4 +1,5 @@
 import Background from "../Components/Chat window"
+import Speechbubble from "../Components/Speach-bubble"
 import {StyledInnerDiv} from "./WhoIsOnline"
 import {Link, Route, Routes} from "react-router-dom"
 import SmallProfilePic from "../Components/smallProfilePic"
@@ -74,6 +75,8 @@ const updateConversation = () => {
     setMessages(`${typedMessage}`)
 }
 
+
+
     return(
         <>
         <Background >
@@ -95,6 +98,7 @@ const updateConversation = () => {
                 <form 
                 onSubmit= {(e) => {
                       e.preventDefault()
+                      setMessages(`${typedMessage}`)
                       setTypedMessage("")
                       }}>
                     <ChatEntry 
