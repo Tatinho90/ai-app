@@ -77,7 +77,7 @@ const updateConversation = () => {
 }
 
 const displayedchatMessage = messages.map(elem => {
-    return <Speechbubble message={"Mamma mia"}/>
+    return <Speechbubble message={"Mamma mia mia mamma mamam"}/>
 })
 
 
@@ -86,8 +86,8 @@ const displayedchatMessage = messages.map(elem => {
         <Background >
             <StyledContainer>
                 <SmallProfilePic
-                url = {url}
-                firstName = {firstName}
+                    url = {url}
+                    firstName = {firstName}
                 ></SmallProfilePic>
                 <Link to="/">
                     <ContactIcon className="fa-regular fa-address-book fa-lg" ></ContactIcon>
