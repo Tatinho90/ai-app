@@ -58,10 +58,20 @@ background-color: #FFCB45;
 `
 
 export default function ChatWindow({url, firstName}){
+
+const prompt = `I am ${firstName}` 
+ 
+//State variables
+const [messages, setMessages] = useState("")
 const [typedMessage, setTypedMessage] = useState("")
 
+//State variable updates
 const updateChat = (e) => {
     setTypedMessage(e.target.value)
+}
+
+const updateConversation = () => {
+    setMessages(`${typedMessage}`)
 }
 
     return(
@@ -82,12 +92,15 @@ const updateChat = (e) => {
                 
                   
             </StyledInnerDiv>
-                <form>
+                <form 
+                onSubmit= {(e) => {
+                      e.preventDefault()
+                      setTypedMessage("")
+                      }}>
                     <ChatEntry 
                         placeholder="Type message here"
                         value = {typedMessage}
                         onChange= {updateChat}
-
                         />
                     <SendContainer>
                         <SendIcon className="fa-regular fa-paper-plane"/>
