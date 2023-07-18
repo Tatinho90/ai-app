@@ -102,7 +102,7 @@ const displayedchatMessage = messages.map(elem => {
             </StyledContainer>
 
 
-            <StyledInnerDiv >
+            <StyledInnerDiv style={{paddingTop: "25px", boxSizing: "border-box"}}>
             {displayedchatMessage}
                   
             </StyledInnerDiv>

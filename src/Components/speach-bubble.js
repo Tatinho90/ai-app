@@ -2,10 +2,8 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
 padding: 10px 20px;
-gap: 10px;
 display: inline-block;
-float: left;
-margin-right: 40px;
+float: ${ props => props.message === "hi" ? "left" : "right" };
 max-width: 158px;
 border-radius: 100px;
 background: ${ props => props.message === "hi" ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
@@ -22,18 +20,24 @@ margin: 0;
 
 const OuterDiv = styled.div`
 width: 100%;
-background-color: green;
-margin: 38px 20px 0 20px;
+margin: 7px 20px 0px 20px;
+`
+
+const FlexContainer = styled.div`
+display: flex;
 `
 
 export default function Speechbubble({message}){
     return (
         <>
+        <FlexContainer>
         <OuterDiv>
             <StyledDiv message={message}>
                 <StyledH3 >{message}</StyledH3>
             </ StyledDiv>
         </OuterDiv>
+        </ FlexContainer>
+        
         
         </>
     )
