@@ -77,7 +77,7 @@ const updateConversation = () => {
 }
 
 const displayedchatMessage = messages.map(elem => {
-    return <Speechbubble message={"Mamma mia mia mamma mamam"}/>
+    return <Speechbubble message={"Mamma mia "}/>
 })
 
 
