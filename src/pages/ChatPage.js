@@ -59,25 +59,32 @@ background-color: #FFCB45;
 `
 
 export default function ChatWindow({url, firstName}){
+  
 
 const prompt = `I am ${firstName}` 
 
  
 //State variables
-const [messages, setMessages] = useState(['Start'])
+const [messages, setMessages] = useState([{role: "system", content: "blablaba"}])
 const [typedMessage, setTypedMessage] = useState("")
+console.log(messages)
 
 //State variable updates
 const updateChat = (e) => {
     setTypedMessage(e.target.value)
 }
 
-const updateConversation = () => {
-    setMessages(`${typedMessage}`)
+const deleteMessageBubble = ()  => {
+    setTypedMessage("")
+}
+
+const updateConversation = (value) => {
+    const object= {role: "user", message: value}
+    setMessages(prev => [...prev, object])
 }
 
 const displayedchatMessage = messages.map(elem => {
-    return <Speechbubble message={"Mamma mia "}/>
+    return <Speechbubble message={elem.message}/>
 })
 
 
@@ -102,8 +109,9 @@ const displayedchatMessage = messages.map(elem => {
                 <form 
                 onSubmit= {(e) => {
                       e.preventDefault()
-                      setMessages(`${typedMessage}`)
-                      setTypedMessage("")
+                      updateConversation(typedMessage)
+                      deleteMessageBubble()
+                      return
                       }}>
                     <ChatEntry 
                         placeholder="Type message here"

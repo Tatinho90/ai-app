@@ -8,7 +8,7 @@ float: left;
 margin-right: 40px;
 max-width: 158px;
 border-radius: 100px;
-background: ${ props => props.message.length > 10 ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
+background: ${ props => props.message === "hi" ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
 `
 const StyledH3 = styled.h3`
 color: #000;
