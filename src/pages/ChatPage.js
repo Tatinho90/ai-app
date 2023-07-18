@@ -1,10 +1,10 @@
 import Background from "../Components/Chat window"
-import Speechbubble from "../Components/Speach-bubble"
+import Speechbubble from "../Components/speach-bubble"
 import {StyledInnerDiv} from "./WhoIsOnline"
 import {Link, Route, Routes} from "react-router-dom"
 import SmallProfilePic from "../Components/smallProfilePic"
 import styled from "styled-components"
-import {useState} from "react"
+import {useState, useRef, useEffect} from "react"
 
 //styles
 const ContactIcon = styled.i`
@@ -58,9 +58,16 @@ background-color: #FFCB45;
 }
 `
 
-export default function ChatWindow({url, firstName}){
-  
+const TextWrapper= styled.div`
+height: 470px;
+overflow: auto;
+overflow-x: hidden;
+`
 
+ 
+export default function ChatWindow({url, firstName}){
+
+  
 const prompt = `I am ${firstName}` 
 
  
@@ -87,6 +94,22 @@ const displayedchatMessage = messages.map(elem => {
     return <Speechbubble message={elem.content}/>
 })
 
+//this code will scroll to bottom of chat (https://stackoverflow.com/questions/61756810/scrolltobottom-using-reactjs-in-chat-app-for-new-messages)
+
+const containerRef = useRef(null);
+
+    useEffect(() => {
+
+      if(containerRef && containerRef.current) {
+        const element = containerRef.current;
+        element.scroll({
+          top: element.scrollHeight,
+          left: 0,
+          behavior: "smooth"
+        })
+      }
+
+    }, [containerRef, messages])
 
     return(
         <>
@@ -103,8 +126,11 @@ const displayedchatMessage = messages.map(elem => {
 
 
             <StyledInnerDiv style={{paddingTop: "25px", boxSizing: "border-box"}}>
-            {displayedchatMessage}
-                  
+                    <TextWrapper ref={containerRef}>
+                        {displayedchatMessage}   
+                    </TextWrapper>
+                
+           
             </StyledInnerDiv>
                 <form 
                 onSubmit= {(e) => {
