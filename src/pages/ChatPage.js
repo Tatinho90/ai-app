@@ -79,12 +79,12 @@ const deleteMessageBubble = ()  => {
 }
 
 const updateConversation = (value) => {
-    const object= {role: "user", message: value}
+    const object= {role: "user", content: value}
     setMessages(prev => [...prev, object])
 }
 
 const displayedchatMessage = messages.map(elem => {
-    return <Speechbubble message={elem.message}/>
+    return <Speechbubble message={elem.content}/>
 })
 
 
