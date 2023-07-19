@@ -5,8 +5,8 @@ const textColor= "white"
 
 
 const StyledDiv = styled.div`
-height: 52px;
-width: 52px;
+height: 61px;
+width: 61px;
 border-radius: 50%;
 background-color: white;
 overflow: hidden;
@@ -17,11 +17,11 @@ const StyledImage = styled.img`
 object-fit: cover;
 width: 150%;
 position: relative;
-left: -12px;
+left: -14px;
 `
 const StyledContactName = styled.h3`
 color: ${textColor};
-font-size: 12px;
+font-size: 13px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -31,7 +31,7 @@ margin:0;
 
 const StyledOnlineStatus = styled.h3`
 color: ${textColor};
-font-size: 11px;
+font-size: 12px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -45,7 +45,7 @@ flex-direction: row;
 align-items: center;
 padding : 0 5% 0 5%;
 margin-top: 28px;
-margin-left: 10px;;
+margin-left: 12px;;
 margin-right: -10px;
 `
 
@@ -58,13 +58,13 @@ gap: 4px;
 `
 
 const OnlinePoint = styled.div`
-height: 8px;
-width: 8px;
+height: 9px;
+width: 9px;
 border-radius: 50%;
 background-color: #22C55E;
 position: relative;
-top: 20px;
-right: 15px;
+top: 24px;
+right: 16px;
 border: 2px solid white;;
 `
 

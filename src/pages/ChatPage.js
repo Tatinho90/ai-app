@@ -10,8 +10,8 @@ import {useState, useRef, useEffect} from "react"
 const ContactIcon = styled.i`
 position: absolute;
 color: white;
-right: 22px;
-margin-top: 54px;
+right: 26px;
+margin-top: 62px;
 `
 
 const StyledContainer = styled.div`
@@ -20,7 +20,7 @@ flex-direction: row;
 `
 
 const ChatEntry = styled.input`
-width: 63.5%;
+width: 65.3%;
 height: 48px;
 border-radius: 164px 0 0 164px;
 border: 1.5px solid #FFCB45;
@@ -33,7 +33,7 @@ font-family: Inter;
 `
 const SendIcon = styled.i`
 color: #353535;
-padding: 5px;
+padding: 6px;
 
 `
 

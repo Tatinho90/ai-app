@@ -9,8 +9,8 @@ const StyledDiv = styled.div`
 margin-left: 0%;
 margin-top: 4%;
 margin-bottom: 4%;
-height: 60px;
-width: 60px;
+height: 72px;
+width: 72px;
 border-radius: 50%;
 background-color: white;
 overflow: hidden;
@@ -21,7 +21,7 @@ const StyledImage = styled.img`
 object-fit: cover;
 width: 150%;
 position: relative;
-left: -15px;
+left: -18px;
 
 `
 const StyledContactName = styled.h3`
@@ -70,14 +70,14 @@ width: 13px;
 border-radius: 50%;
 background-color: #22C55E;
 position: relative;
-top: 27px;
+top: 29px;
 right: 18px;
 z-index: 99;
 border: 2px solid white;;
 `
 const StyledArrow = styled.i`
 position: absolute;
-right: 18px;
+right: 21px;
 margin-top: auto;
 margin-bottom: auto;
 color: rgba(0,0,0,0.4);
