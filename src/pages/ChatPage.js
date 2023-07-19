@@ -111,6 +111,14 @@ const containerRef = useRef(null);
 
     }, [containerRef, messages])
 
+const sendChatMessage = () => {
+    if (typedMessage.length > 0){
+        updateConversation(typedMessage)
+        deleteMessageBubble()
+    }
+    
+}
+
     return(
         <>
         <Background >
@@ -135,17 +143,18 @@ const containerRef = useRef(null);
                 <form 
                 onSubmit= {(e) => {
                       e.preventDefault()
-                      updateConversation(typedMessage)
-                      deleteMessageBubble()
-                      return
+                      sendChatMessage()
+                      
                       }}>
                     <ChatEntry 
                         placeholder="Type message here"
                         value = {typedMessage}
                         onChange= {updateChat}
                         />
-                    <SendContainer>
-                        <SendIcon className="fa-regular fa-paper-plane"/>
+                    <SendContainer onClick =  {sendChatMessage}   >
+                        <SendIcon 
+                            className="fa-regular fa-paper-plane"
+                            />
                      </SendContainer>              
                 </form>
         </ Background >
