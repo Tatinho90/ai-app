@@ -1,16 +1,16 @@
 import styled from "styled-components"
 
 const StyledDiv = styled.div`
-padding: 10px 20px;
+padding: 12px 24px;
 display: inline-block;
 float: ${ props => props.message === "hi" ? "left" : "right" };
-max-width: 158px;
+max-width: 188px;
 border-radius: 100px;
 background: ${ props => props.message === "hi" ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
 `
 const StyledH3 = styled.h3`
 color: #000;
-font-size: 12px;
+font-size: 13px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
