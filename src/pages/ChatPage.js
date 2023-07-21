@@ -76,7 +76,6 @@ const prompt = `I am ${firstName}`
 //State variables
 const [messages, setMessages] = useState([{role: "system", content: "blablaba"}])
 const [typedMessage, setTypedMessage] = useState("")
-console.log(messages)
 
 //State variable updates
 const updateChat = (e) => {

@@ -10,7 +10,7 @@ const [selectedUser, setSelectedUser] = useState({})
 //Change states
 const changeUser = (newUser) => {
     setSelectedUser(newUser)
-    console.log(selectedUser)
+    // console.log(selectedUser)
 }
   return (
 
