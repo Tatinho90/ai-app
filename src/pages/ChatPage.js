@@ -6,6 +6,8 @@ import SmallProfilePic from "../Components/smallProfilePic"
 import styled from "styled-components"
 import {useState, useRef, useEffect} from "react"
 
+const url= "https://64baa3ef93db0a13e6198c3e--historicapi.netlify.app/.netlify/functions/fetchAI"
+
 //styles
 const ContactIcon = styled.i`
 position: absolute;
@@ -119,6 +121,19 @@ const sendChatMessage = () => {
     
 }
 
+// API call
+
+useEffect(() => {
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'text/plain'
+        }})
+    .then(res => res.json())
+    .then(data => console.log(data))
+}, [messages])
+
+
     return(
         <>
         <Background >
@@ -143,8 +158,7 @@ const sendChatMessage = () => {
                 <form 
                 onSubmit= {(e) => {
                       e.preventDefault()
-                      sendChatMessage()
-                      
+                      sendChatMessage()                 
                       }}>
                     <ChatEntry 
                         placeholder="Type message here"
