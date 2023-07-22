@@ -67,13 +67,13 @@ overflow-x: hidden;
 `
 
  
-export default function ChatWindow({url, firstName}){
+export default function ChatWindow({url, firstName, prompt}){
 
   
 
  
 //State variables
-const [messages, setMessages] = useState([{role: "system", content: "blablaba"}])
+const [messages, setMessages] = useState([{role: "system", content: `${prompt} `}])
 const [typedMessage, setTypedMessage] = useState("")
 
 //State variable updates
@@ -121,15 +121,13 @@ const sendChatMessage = () => {
 
 // API call
 
-console.log("this is v1")
-
 useEffect(() => {
     fetch(apiUrl, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-    body:  JSON.stringify([{"role": "system", "content": "You are a very helpful assistant."}, {role: "user", content: "Hi, what is your name?"}])
+    body:  JSON.stringify(messages)
 })
     .then(res => res.json())
     .then(data => console.log(data))

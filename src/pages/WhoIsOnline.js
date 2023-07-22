@@ -37,6 +37,7 @@ export default function WhoIsOnline({changeUser}){
         return <ProfilePics url={elem.profilePicURL} 
         firstName={elem.firstName}
         lastName = {elem.lastName}
+        prompt = {elem.prompt}
         key = {elem.id}
         changeUser = {changeUser}
          />
