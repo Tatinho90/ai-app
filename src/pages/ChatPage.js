@@ -70,7 +70,6 @@ overflow-x: hidden;
 export default function ChatWindow({url, firstName}){
 
   
-const prompt = `I am ${firstName}` 
 
  
 //State variables
@@ -122,13 +121,15 @@ const sendChatMessage = () => {
 
 // API call
 
+console.log("this is v1")
+
 useEffect(() => {
     fetch(apiUrl, {
         method: 'POST',
         headers: {
-            'content-type': 'text/plain'
+            'content-type': 'application/json'
         },
-    body: {messages: [{"role": "system", "content": "You are a helpful assistant."}, {role: "user", content: "Hello world"}]}
+    body:  JSON.stringify([{"role": "system", "content": "You are a very helpful assistant."}, {role: "user", content: "Hi, what is your name?"}])
 })
     .then(res => res.json())
     .then(data => console.log(data))

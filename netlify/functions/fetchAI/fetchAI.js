@@ -7,22 +7,24 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const handler = async (event) => {
+  console.log("this has been called")
+  console.log(`${event}`)
   try {
-    const response = await openai.createCompletion({
+    const response = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',
-        messages: event.body,
-        presence_penalty: 0,
-        frequency_penalty: 0.3,
-        max_tokens: 4000,
-        temperature: 0,
-        stop: ['\n', '->']
+        messages: JSON.parse(event.body),
+        // presence_penalty: 0,
+        // frequency_penalty: 0.3,
+        // max_tokens: 4000,
+        // temperature: 0,
+        // stop: ['\n', '->']
     })
     return {
         statusCode: 200,
-        body: JSON.stringify({response}),
+        body: JSON.stringify({reply : response.data.choices[0]}),
     }
 } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    return { statusCode: 500, body: error.toString(), myMessage: "I have no idea what is happening" }
 }
 }
 

@@ -21,6 +21,7 @@ const changeUser = (newUser) => {
       <Route path="/chatWindow" element={<ChatPage 
       url={selectedUser.url}
       firstName = {selectedUser.firstName}
+      prompt = {selectedUser.prompt}
       /> }></ Route>
    </Routes>
       

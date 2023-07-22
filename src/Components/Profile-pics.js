@@ -90,7 +90,7 @@ export default function Pics(props){
          to="/chatWindow"
          style={{textDecoration: "none"}}>
             <StyledContainer
-            onClick = {() => props.changeUser({url: props.url, firstName: props.firstName})}
+            onClick = {() => props.changeUser({url: props.url, firstName: props.firstName, prompt: props.prompt})}
             >
                 
                 <StyledDiv>
