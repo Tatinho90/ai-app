@@ -75,6 +75,7 @@ export default function ChatWindow({url, firstName, prompt}){
 //State variables
 const [messages, setMessages] = useState([{role: "system", content: `${prompt} `}])
 const [typedMessage, setTypedMessage] = useState("")
+console.log(messages)
 
 //State variable updates
 const updateChat = (e) => {
@@ -90,8 +91,16 @@ const updateConversation = (value) => {
     setMessages(prev => [...prev, object])
 }
 
+const addAIResponse = (value) => {
+    const object = {role: "assistant", content: value};
+    setMessages(prev => [...prev, object])
+}
+
 const displayedchatMessage = messages.map(elem => {
-    return <Speechbubble message={elem.content}/>
+    if (elem.role != "system"){
+        return <Speechbubble message={elem.content} role={elem.role}/>
+    }
+
 })
 
 //this code will scroll to bottom of chat (https://stackoverflow.com/questions/61756810/scrolltobottom-using-reactjs-in-chat-app-for-new-messages)
@@ -111,6 +120,8 @@ const containerRef = useRef(null);
 
     }, [containerRef, messages])
 
+//updating messages and clearing chat bubble
+
 const sendChatMessage = () => {
     if (typedMessage.length > 0){
         updateConversation(typedMessage)
@@ -122,6 +133,8 @@ const sendChatMessage = () => {
 // API call
 
 useEffect(() => {
+if(messages[messages.length-1].role != "assistant"){
+    console.log(messages)
     fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -130,7 +143,8 @@ useEffect(() => {
     body:  JSON.stringify(messages)
 })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => addAIResponse(data.reply))
+} 
 }, [messages])
 
 

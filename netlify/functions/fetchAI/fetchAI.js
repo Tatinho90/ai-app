@@ -21,10 +21,10 @@ const handler = async (event) => {
     })
     return {
         statusCode: 200,
-        body: JSON.stringify({reply : response.data.choices[0]}),
+        body: JSON.stringify({reply : response.data.choices[0].message.content}),
     }
 } catch (error) {
-    return { statusCode: 500, body: error.toString(), myMessage: "I have no idea what is happening" }
+    return { statusCode: 500, body: error.toString() }
 }
 }
 

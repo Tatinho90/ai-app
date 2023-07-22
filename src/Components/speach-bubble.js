@@ -3,10 +3,10 @@ import styled from "styled-components"
 const StyledDiv = styled.div`
 padding: 12px 24px;
 display: inline-block;
-float: ${ props => props.message === "hi" ? "left" : "right" };
+float: ${ props => props.role === "assistant" ? "right" : "left" };
 max-width: 188px;
-border-radius: 100px;
-background: ${ props => props.message === "hi" ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
+border-radius: 15px;
+background: ${ props => props.role  === "user" ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
 `
 const StyledH3 = styled.h3`
 color: #000;
@@ -27,12 +27,12 @@ const FlexContainer = styled.div`
 display: flex;
 `
 
-export default function Speechbubble({message}){
+export default function Speechbubble({message, role}){
     return (
         <>
         <FlexContainer>
         <OuterDiv>
-            <StyledDiv message={message}>
+            <StyledDiv message={message} role={role}>
                 <StyledH3 >{message}</StyledH3>
             </ StyledDiv>
         </OuterDiv>
