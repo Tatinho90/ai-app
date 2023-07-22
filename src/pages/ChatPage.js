@@ -127,7 +127,9 @@ useEffect(() => {
         method: 'POST',
         headers: {
             'content-type': 'text/plain'
-        }})
+        },
+    body: {messages: [{"role": "system", "content": "You are a helpful assistant."}, {role: "user", content: "Hello world"}]}
+})
     .then(res => res.json())
     .then(data => console.log(data))
 }, [messages])
