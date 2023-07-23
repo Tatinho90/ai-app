@@ -2,6 +2,9 @@ import styled from "styled-components"
 import ChatWindow from "../Components/Chat window"
 import ProfilePics from "../Components/Profile-pics"
 import celebrities from "../celebrities"
+import {useState} from "react"
+
+const scale= 0.9
 
 const StyledInnerDiv = styled.div`
 border-radius: 30px 30px 0px 0px;
@@ -31,31 +34,34 @@ margin-top: 19px;
 margin-bottom: 8px;
 `
 
+
+
 export default function WhoIsOnline({changeUser}){
 
-    const onlinePhotos = celebrities.map(elem => { 
+
+    let onlinePhotos = celebrities.map((elem,index, arr) => { 
         return <ProfilePics url={elem.profilePicURL} 
         firstName={elem.firstName}
         lastName = {elem.lastName}
         prompt = {elem.prompt}
         key = {elem.id}
         changeUser = {changeUser}
-         />
+         />     
     } )
-    return (
-        <>
-        <ChatWindow>
-            <StyledTitle>Contacts</StyledTitle>
-            <StyledInnerDiv>
-                <StyledTopLine/>
-                {onlinePhotos}
-            </StyledInnerDiv>
-        
-        </ChatWindow >
-        </ >        
-       
-    )
-   
-} 
+
+
+        return (
+            <>
+            <ChatWindow>
+                <StyledTitle>Contacts</StyledTitle>
+                <StyledInnerDiv>
+                    <StyledTopLine/>
+                    {onlinePhotos}
+                </StyledInnerDiv>
+            
+            </ChatWindow >
+            </ >          )
+}
+      
 
 export {StyledInnerDiv}
