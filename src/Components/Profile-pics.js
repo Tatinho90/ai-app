@@ -2,15 +2,15 @@ import styled from "styled-components"
 import {Link, Route, Routes} from "react-router-dom"
 
 const textColor= "#000"
-
+const scale= 0.9
 
 
 const StyledDiv = styled.div`
 margin-left: 0%;
 margin-top: 4%;
 margin-bottom: 4%;
-height: 72px;
-width: 72px;
+height: ${72*scale}px;
+width: ${72*scale}px;
 border-radius: 50%;
 background-color: white;
 overflow: hidden;
@@ -21,12 +21,12 @@ const StyledImage = styled.img`
 object-fit: cover;
 width: 150%;
 position: relative;
-left: -18px;
+left: -${18*scale}px;
 
 `
 const StyledContactName = styled.h3`
 color: ${textColor};
-font-size: 16px;
+font-size: 15px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -36,7 +36,7 @@ margin:0;
 
 const StyledOnlineStatus = styled.h3`
 color: ${textColor};
-font-size: 14px;
+font-size: 13px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -59,25 +59,24 @@ padding : 0 5% 0 5%;
 const StyledInnerContainer = styled.div`
 display: flex;
 flex-direction: column;
-margin-left: 10px;
+margin-left: ${10*scale}px;
 justify-content: center;
 gap: 4px;
 `
 
 const OnlinePoint = styled.div`
-height: 13px;
-width: 13px;
+height: ${13*scale}px;
+width: ${13*scale}px;
 border-radius: 50%;
 background-color: #22C55E;
 position: relative;
-top: 29px;
-right: 18px;
-z-index: 99;
+top: ${29*scale}px;
+right:  ${18*scale}px;
 border: 2px solid white;;
 `
 const StyledArrow = styled.i`
 position: absolute;
-right: 21px;
+right: ${21*scale}px;
 margin-top: auto;
 margin-bottom: auto;
 color: rgba(0,0,0,0.4);

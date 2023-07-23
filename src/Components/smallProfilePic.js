@@ -2,11 +2,12 @@ import styled from "styled-components"
 import {Link, Route, Routes} from "react-router-dom"
 
 const textColor= "white"
+const scale= 0.9
 
 
 const StyledDiv = styled.div`
-height: 61px;
-width: 61px;
+height: ${61*scale}px;
+width: ${61*scale}px;
 border-radius: 50%;
 background-color: white;
 overflow: hidden;
@@ -17,7 +18,7 @@ const StyledImage = styled.img`
 object-fit: cover;
 width: 150%;
 position: relative;
-left: -14px;
+left: -${14*scale}px;
 `
 const StyledContactName = styled.h3`
 color: ${textColor};
@@ -44,15 +45,15 @@ display: flex;
 flex-direction: row;
 align-items: center;
 padding : 0 5% 0 5%;
-margin-top: 28px;
-margin-left: 12px;;
-margin-right: -10px;
+margin-top: ${28*scale}px;
+margin-left: ${12*scale}px;
+margin-right: -${10*scale}px;
 `
 
 const StyledInnerContainer = styled.div`
 display: flex;
 flex-direction: column;
-margin-left: 3px;
+margin-left: ${3*scale}px;
 justify-content: center;
 gap: 4px;
 `
@@ -63,8 +64,8 @@ width: 9px;
 border-radius: 50%;
 background-color: #22C55E;
 position: relative;
-top: 24px;
-right: 16px;
+top: ${24*scale}px;
+right: ${16*scale}px;
 border: 2px solid white;;
 `
 

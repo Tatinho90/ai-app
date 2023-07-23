@@ -7,13 +7,14 @@ import styled from "styled-components"
 import {useState, useRef, useEffect} from "react"
 
 const apiUrl= "https://historicapi.netlify.app/.netlify/functions/fetchAI"
+const scale= 0.9
 
 //styles
 const ContactIcon = styled.i`
 position: absolute;
 color: white;
-right: 26px;
-margin-top: 62px;
+right: ${26*scale}px;
+margin-top: ${62*scale}px;
 `
 
 const StyledContainer = styled.div`
@@ -23,33 +24,33 @@ flex-direction: row;
 
 const ChatEntry = styled.input`
 width: 65.3%;
-height: 48px;
+height: ${48*scale}px;
 border-radius: 164px 0 0 164px;
 border: 1.5px solid #FFCB45;
 background-color: #E5E6E9;
 position: absolute;
-bottom: 28px;
+bottom: ${28*scale}px;
 margin-left: 6%;
-padding-left: 25px;
+padding-left: ${25*scale}px;
 font-family: Inter;
 `
 const SendIcon = styled.i`
 color: #353535;
-padding: 6px;
+padding: ${6*scale}px;
 
 `
 
 const SendContainer = styled.div`
 width: 16%;
-height: 50px;
+height: ${50*scale}px;
 border-radius: 0 164px 164px 0;
 border-right: 1.5px solid #FFCB45;
 border-top: 1.5px solid #FFCB45;
 border-bottom: 1.5px solid #FFCB45;
 background-color: #E5E6E9;
 position: absolute;
-bottom: 28px;
-right: 18px;
+bottom: ${28*scale}px;
+right: ${21*scale}px;
 display:flex;
 align-items: center;
 justify-content: center;
@@ -61,7 +62,7 @@ background-color: #FFCB45;
 `
 
 const TextWrapper= styled.div`
-height: 470px;
+height: 80%;
 overflow: auto;
 overflow-x: hidden;
 `
@@ -75,7 +76,6 @@ export default function ChatWindow({url, firstName, prompt}){
 //State variables
 const [messages, setMessages] = useState([{role: "system", content: `${prompt} `}])
 const [typedMessage, setTypedMessage] = useState("")
-console.log(messages)
 
 //State variable updates
 const updateChat = (e) => {
@@ -132,20 +132,20 @@ const sendChatMessage = () => {
 
 // API call
 
-useEffect(() => {
-if(messages[messages.length-1].role != "assistant"){
-    console.log(messages)
-    fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-    body:  JSON.stringify(messages)
-})
-    .then(res => res.json())
-    .then(data => addAIResponse(data.reply))
-} 
-}, [messages])
+// useEffect(() => {
+// if(messages[messages.length-1].role != "assistant"){
+//     console.log(messages)
+//     fetch(apiUrl, {
+//         method: 'POST',
+//         headers: {
+//             'content-type': 'application/json'
+//         },
+//     body:  JSON.stringify(messages)
+// })
+//     .then(res => res.json())
+//     .then(data => addAIResponse(data.reply))
+// } 
+// }, [messages])
 
 
 
@@ -164,13 +164,12 @@ if(messages[messages.length-1].role != "assistant"){
             </StyledContainer>
 
 
-            <StyledInnerDiv style={{paddingTop: "25px", boxSizing: "border-box"}}>
+            <StyledInnerDiv style={{paddingTop: `${26*scale}px`, boxSizing: "border-box"}}>
                     <TextWrapper ref={containerRef}>
                         {displayedchatMessage}   
-                    </TextWrapper>
-                
-           
+                    </TextWrapper>                  
             </StyledInnerDiv>
+
                 <form 
                 onSubmit= {(e) => {
                       e.preventDefault()
@@ -187,6 +186,8 @@ if(messages[messages.length-1].role != "assistant"){
                             />
                      </SendContainer>              
                 </form>
+
+                <h4 style={{position:"absolute", bottom: "59px", left:"42px", color:"grey",fontSize:"12px",fontWeight:"400"}}>{firstName} is typing...</h4>
         </ Background >
         </>
     )

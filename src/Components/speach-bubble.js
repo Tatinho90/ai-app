@@ -1,10 +1,12 @@
 import styled from "styled-components"
 
+const scale=0.9
+
 const StyledDiv = styled.div`
 padding: 12px 24px;
 display: inline-block;
 float: ${ props => props.role === "assistant" ? "right" : "left" };
-max-width: 188px;
+max-width: ${188*scale}px;
 border-radius: 15px;
 background: ${ props => props.role  === "user" ? "rgba(255, 199, 0, 0.25)" : "rgba(255, 137, 51, 0.25)" }
 `
