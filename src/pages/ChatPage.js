@@ -76,6 +76,7 @@ export default function ChatWindow({url, firstName, prompt}){
 //State variables
 const [messages, setMessages] = useState([{role: "system", content: `${prompt} `}])
 const [typedMessage, setTypedMessage] = useState("")
+const [loading, setLoading] = useState(true)
 
 //State variable updates
 const updateChat = (e) => {
@@ -132,20 +133,21 @@ const sendChatMessage = () => {
 
 // API call
 
-// useEffect(() => {
-// if(messages[messages.length-1].role != "assistant"){
-//     console.log(messages)
-//     fetch(apiUrl, {
-//         method: 'POST',
-//         headers: {
-//             'content-type': 'application/json'
-//         },
-//     body:  JSON.stringify(messages)
-// })
-//     .then(res => res.json())
-//     .then(data => addAIResponse(data.reply))
-// } 
-// }, [messages])
+useEffect(() => {
+if(messages[messages.length-1].role != "assistant"){
+    setLoading(true)
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+    body:  JSON.stringify(messages)
+})
+    .then(res => res.json())
+    .then(data => addAIResponse(data.reply))
+    .then(data => setLoading(false))
+} 
+}, [messages])
 
 
 
@@ -187,7 +189,7 @@ const sendChatMessage = () => {
                      </SendContainer>              
                 </form>
 
-                <h4 style={{position:"absolute", bottom: "59px", left:"42px", color:"grey",fontSize:"12px",fontWeight:"400"}}>{firstName} is typing...</h4>
+                {loading && <h4 style={{position:"absolute", bottom: "59px", left:"42px", color:"grey",fontSize:"12px",fontWeight:"400"}}>{firstName} is typing...</h4>}
         </ Background >
         </>
     )
