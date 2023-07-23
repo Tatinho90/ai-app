@@ -1,10 +1,13 @@
 import styled from "styled-components"
 
+const scale= 0.9
+
+
 const StyledDiv = styled.div`
 width: 95%;
 height: 95vh;
-max-width: 390px;
-max-height: 840px;
+max-width: ${390*scale}px;
+max-height: ${840*scale}px;
 margin: auto;
 position: absolute;
 top: 0; right: 0;
