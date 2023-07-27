@@ -7,8 +7,6 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const handler = async (event) => {
-  console.log("this has been called")
-  console.log(`${event}`)
   try {
     const response = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',
