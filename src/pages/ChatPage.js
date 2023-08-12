@@ -7,7 +7,7 @@ import styled from "styled-components"
 import {useState, useRef, useEffect} from "react"
 
 const apiUrl= "https://historicapi.netlify.app/.netlify/functions/fetchAI"
-const scale= 0.9
+const scale= 0.900
 
 //styles
 const ContactIcon = styled.i`
