@@ -2,7 +2,7 @@ import styled from "styled-components"
 import {Link, Route, Routes} from "react-router-dom"
 
 const textColor= "white"
-const scale= 0.90
+const scale= 0.900
 
 
 const StyledDiv = styled.div`
